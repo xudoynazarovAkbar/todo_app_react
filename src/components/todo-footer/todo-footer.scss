@@ -1,0 +1,77 @@
+.todo-app__footer.tablet-above {
+  border-radius: 0 5px 5px 0;
+}
+.todo-app__footer {
+  transition: background-color .3s ease;
+  box-shadow: 0 35px 50px -15px var(--shadow);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+
+
+  .todo-footer__count {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.19px;
+    color: var(--secondary-color);
+  }
+
+  .todo-footer__controls {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+    max-width: 220px;
+    width: 100%;
+
+    li {
+      &:hover {
+        .filter-btn {
+          color: var(--text);
+        }
+      }
+
+      .filter-btn {
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: -0.19px;
+        color: var(--secondary-color);
+
+        &.filter-btn--active {
+          color: var(--active);
+        }
+      }
+    }
+  }
+
+  .todo-footer__clear-completed {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.19px;
+    color: var(--secondary-color);
+
+    &:hover {
+      color: var(--text);
+    }
+  }
+}
+.todo-app__footer.phone {
+  display: none;
+}
+@media (max-width: 600px) {
+  .todo-app__footer.tablet-above{
+    margin-bottom: 16px;
+    box-shadow: none;
+  }
+  .todo-footer__controls.tablet-above {
+    display: none;
+  }
+  .todo-app__footer.phone {
+    margin-bottom: 50px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 25px 50px -20px var(--shadow);
+  }
+}

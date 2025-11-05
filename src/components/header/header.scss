@@ -1,0 +1,65 @@
+.todo-app__header {
+  margin-bottom: 24px;
+  .todo-app__top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    h1 {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 40px;
+      letter-spacing: 15px;
+      text-transform: uppercase;
+    }
+    .top-bar__btn {
+      cursor: pointer;
+    }
+  }
+  .todo-form {
+    transition: all .3s ease;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 35px 50px -15px var(--shadow);
+    padding: 0 14px 0 14px;
+    input {
+      padding: 20px 14px;
+      flex-grow: 1;
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: -0.25px;
+      color: var(--text);
+      caret-color: var(--active);
+      &::placeholder {
+        color: var(--placeholder);
+      }
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px var(--input-bg) inset;
+        -webkit-text-fill-color: var(--text);
+        transition: background-color 5000s ease-in-out;
+      }
+    }
+    .todo-form__add-btn {
+      background: var(--active);
+      padding: 10px 0px;
+      border-radius: 5px;
+      width: 80px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+}
+.top-bar__btn .theme-icon {
+  animation: rotateIn 0.3s ease forwards;
+}
+
+@keyframes rotateIn {
+  from { transform: rotate(-90deg) scale(0.8); opacity: 0; }
+  to { transform: rotate(0deg) scale(1); opacity: 1; }
+}

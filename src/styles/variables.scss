@@ -1,0 +1,36 @@
+:root {
+  --primary-color: #ffffff;
+  --background: #FAFAFA;
+  --greys: #d1d2da;
+  --secondary-color: #9495a5;
+  --placeholder: #9495a5;
+  --text: #494c6b;
+  --active: #3a7cfd;
+  --shadow: #47486280;
+  --color: #e3e4f1;
+  --linear: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+
+  .todo-list__delete-btn {
+    img {
+      filter: brightness(0);
+    }
+  }
+}
+
+#todo-list-app.dark-mode {
+  --primary-color: #25273d;
+  --background: #171823;
+  --greys: #4d5067;
+  --secondary-color: #5b5e7e;
+  --text: #c8cbe7;
+  --placeholder: #767992;
+  --color: #393a4b;
+  --shadow: #00000080;
+  background-image: url("../../public/assets/images/background-image-dark.jpg");
+
+  .todo-list__delete-btn {
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+}

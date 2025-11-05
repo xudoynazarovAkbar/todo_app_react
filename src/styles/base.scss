@@ -1,0 +1,45 @@
+body {
+  font-family: "Josefin Sans", sans-serif;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--active);
+  border-radius: 10px;
+}
+
+#todo-list-app {
+  transition: all .3s ease-in-out;
+  background-color: var(--background);
+  background-image: url("../../public/assets/images/background-image-light.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 70px 0 52px 0;
+
+  .container {
+    max-width: 588px;
+    width: 100%;
+    padding: 0 24px;
+    .todo-app {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+@media (max-width: 767px) {
+  #todo-list-app {
+    background-size: auto;
+    background-position: left 0;
+  }
+}
+
