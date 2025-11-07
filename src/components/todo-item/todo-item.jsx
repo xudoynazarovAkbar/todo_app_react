@@ -83,7 +83,7 @@ const TodoItem = (props) => {
 									setShowEdit(false)
 								}}
 							>
-								<img src="../../../public/assets/icons/x-icon.svg" alt="delete" />
+								<img src="/assets/icons/x-icon.svg" alt="delete" />
 							</button>
 						</>
 
