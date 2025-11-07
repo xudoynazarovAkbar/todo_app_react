@@ -121,7 +121,7 @@ const TodoItem = (props) => {
 							handleDelete(id)
 						}}
 					>
-						<img src="../../../public/assets/icons/x-icon.svg" alt="delete" />
+						<img src="/assets/icons/x-icon.svg" alt="delete" />
 					</button>
 				</div>
 			)}
