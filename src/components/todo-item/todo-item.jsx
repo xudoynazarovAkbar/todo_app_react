@@ -1,8 +1,10 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, memo, useRef} from "react";
 import './todo-item.scss';
 
-const TodoItem = (props) => {
+const TodoItem = memo((props) => {
 	let {id, text, isChecked, handleRestore, handleToggle, handleEdit, handleDelete, isArchived, needTruncate} = props
+
+	const editInputRef = useRef(null);
 
 	const [showFull, setShowFull] = useState(false);
 	const [showEdit, setShowEdit] = useState(false);
@@ -25,10 +27,7 @@ const TodoItem = (props) => {
 
 	useEffect(() => {
 		if (showEdit) {
-			const editInput = document.getElementById('edit-input');
-			if (editInput) {
-				editInput.focus();
-			}
+			editInputRef.current?.focus();
 		}
 	}, [showEdit]);
 
@@ -67,7 +66,7 @@ const TodoItem = (props) => {
 					{!showEdit ? displayText : (
 						<>
 							<input
-								id="edit-input"
+								ref={editInputRef}
 								type="text"
 								value={editValue}
 								onChange={(e) => {
@@ -110,7 +109,7 @@ const TodoItem = (props) => {
 							onClick={() => {
 								handleRestore(id)
 							}}
-						 >
+						>
 							<img src="/assets/icons/restore.png" width="20" height="20" alt="restore " />
 						</button>
 					)}
@@ -127,6 +126,6 @@ const TodoItem = (props) => {
 			)}
 		</li>
 	)
-}
+})
 
 export default TodoItem;

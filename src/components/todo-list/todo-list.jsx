@@ -1,10 +1,11 @@
 import TodoItem from "../todo-item/todo-item.jsx";
 import './todo-list.scss';
+import {useCallback} from "react";
 
 const TodoList = (props) => {
 	const { todos, setTodos, filter } = props
 
-	const handleToggle = (id) => {
+	const handleToggle = useCallback((id) => {
 		setTodos(prev =>
 			prev.map(todo =>
 				todo.id === id && !todo.isArchived
@@ -12,9 +13,9 @@ const TodoList = (props) => {
 					: todo
 			)
 		);
-	};
+	}, [])
 
-	const handleRestore = (id) => {
+	const handleRestore = useCallback((id) => {
 		setTodos(prevTodos =>
 			prevTodos.map(todo =>
 				todo.id === id && todo.isArchived
@@ -22,9 +23,9 @@ const TodoList = (props) => {
 					: todo
 			)
 		)
-	}
+	}, [])
 
-	const handleEdit = (id, newText) => {
+	const handleEdit = useCallback((id, newText) => {
 		const truncate_length = 40;
 
 		setTodos(prevTodos =>
@@ -38,9 +39,9 @@ const TodoList = (props) => {
 					: todo
 			)
 		);
-	};
+	}, [])
 
-	const handleDelete = (id) => {
+	const handleDelete = useCallback((id) => {
 		setTodos(prev =>
 			prev
 				.map(todo => {
@@ -50,7 +51,7 @@ const TodoList = (props) => {
 				})
 				.filter(Boolean)
 		)
-	}
+	}, [])
 
 
 	const filteredTodos = todos.filter(todo => {
